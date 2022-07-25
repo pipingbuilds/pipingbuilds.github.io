@@ -148,7 +148,7 @@ const sheepMove = (s) => {
         }
         }, 2);
 }
-
+x
 const sheepBounce = (s) => {
     let thisSheep = s;
     let currentPos = parseInt(thisSheep.style.top, 10);
