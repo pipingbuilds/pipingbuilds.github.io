@@ -111,7 +111,7 @@ function sheepMaker(n) {
         newSheep.setAttribute('src', './assets/sheep.png');
         newSheep.setAttribute('id', `s${n}`)
         newSheep.classList.add('sheep');
-        newSheep.style.left = Math.floor(Math.random() * contWidthParsed) + 'px';
+        newSheep.style.left = Math.floor(Math.random() * (contWidthParsed - 10)) + 'px';
         document.getElementById('game-container').appendChild(newSheep);
         sheepMove(newSheep.id);  
         sheepNum++;
@@ -138,7 +138,9 @@ const sheepMove = (s) => {
             if (currentPos === targetPos || sheepEndStatus === true) {
                 currentSheep.remove();
                 sheepMaker(sheepNum);
-                sheepMaker(sheepNum);
+                setTimeout(function(){
+                    sheepMaker(sheepNum);
+                },1000);
                 if (currentPos === targetPos) {
                 sheepUpdate();
                 }
@@ -176,9 +178,9 @@ const sheepTurn = (s) => {
     }   
     let targetPosFind = () => {
         if (side() === 'right') {
-            return startingPos - Math.floor(Math.random() * (120 - 60) + 60);
+            return startingPos - Math.floor(Math.random() * (contWidthParsed - startingPos));
         } else if (side() === 'left') {
-            return startingPos + Math.floor(Math.random() * (120 - 60) + 60);
+            return startingPos + Math.floor(Math.random() * (contWidthParsed - startingPos));
         }
     }
     let targetPos = targetPosFind();
@@ -216,13 +218,15 @@ const sheepMoveAgain = (s) => {
             if (currentPos === targetPos || sheepEndStatus === true) {
                 thisSheep.remove();
                 sheepMaker(sheepNum);
-                sheepMaker(sheepNum);
+                setTimeout(function(){
+                    sheepMaker(sheepNum);
+                },1000);
                 if (currentPos === targetPos) {
                     sheepUpdate();     
                 }
             }
             }
-        }, 2);
+        }, .5);
 }
 
 const sheepEnder = () => {
