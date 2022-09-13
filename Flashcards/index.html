@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <div class="title">
+            <h1>Note Identifier</h1>
+            <p>Can you identify the note on the staff? Reveal the note name or fingering to check your work. Click next for the next challenge!</p>
+        </div>
+        <div class="next-button-container">
+            <div class="button" onclick="newGame()">
+                Next challenge!
+            </div>
+        </div>
+    </div>
+    <div class="game-container">
+
+        <div class="note" id="note0" style="display:none">
+            <div class="staff">
+                <div class="note-title">
+                    <h1>Name and play this note:</h1>
+                </div>
+                <img src="assets/low_g.png">
+            </div>
+            <div class="answers">
+                <div class="answer nn">
+                    <a class="button reveal_button" id="button1_lg">Reveal Note Name</a>
+                    <div class="reveal note-name" id="notename_lg" style="display:none">
+                        <h1>Low G</h1>
+                    </div>
+                </div>
+                <div class="answer fc">
+                    <a class="button reveal_button" id="button2_lg">Reveal Fingering Chart</a>
+                    <div class="reveal fingering" id="notechart_lg" style="display:none">
+                        <img src="assets/lowg_chart.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="note" id="note1" style="display:none">
+            <div class="staff">
+                <div class="note-title">
+                    <h1>Name and play this note:</h1>
+                </div>
+                <img src="assets/low_a.png">
+            </div>
+            <div class="answers">
+                <div class="answer nn">
+                    <a class="button reveal_button" id="button1_la">Reveal Note Name</a>
+                    <div class="reveal note-name" id="notename_la" style="display:none">
+                        <h1>Low A</h1>
+                    </div>
+                </div>
+                <div class="answer fc">
+                    <a class="button reveal_button" id="button2_la">Reveal Fingering Chart</a>
+                    <div class="reveal fingering" id="notechart_la" style="display:none">
+                        <img src="assets/lowa_chart.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="note" id="note2" style="display:none">
+            <div class="staff">
+                <div class="note-title">
+                    <h1>Name and play this note:</h1>
+                </div>
+                <img src="assets/b.png">
+            </div>
+            <div class="answers">
+                <div class="answer nn">
+                    <a class="button reveal_button" id="button1_b">Reveal Note Name</a>
+                    <div class="reveal note-name" id="notename_b" style="display:none">
+                        <h1>B</h1>
+                    </div>
+                </div>
+                <div class="answer fc">
+                    <a class="button reveal_button" id="button2_b">Reveal Fingering Chart</a>
+                    <div class="reveal fingering" id="notechart_b" style="display:none">
+                        <img src="assets/b_chart.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="note" id="note3" style="display:none">
+            <div class="staff">
+                <div class="note-title">
+                    <h1>Name and play this note:</h1>
+                </div>
+                <img src="assets/c.png">
+            </div>
+            <div class="answers">
+                <div class="answer nn">
+                    <a class="button reveal_button" id="button1_c">Reveal Note Name</a>
+                    <div class="reveal note-name" id="notename_c" style="display:none">
+                        <h1>C</h1>
+                    </div>
+                </div>
+                <div class="answer fc">
+                    <a class="button reveal_button" id="button2_c">Reveal Fingering Chart</a>
+                    <div class="reveal fingering" id="notechart_c" style="display:none">
+                        <img src="assets/c_chart.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="note" id="note4" style="display:none">
+            <div class="staff">
+                <div class="note-title">
+                    <h1>Name and play this note:</h1>
+                </div>
+                <img src="assets/d.png">
+            </div>
+            <div class="answers">
+                <div class="answer nn">
+                    <a class="button reveal_button" id="button1_d">Reveal Note Name</a>
+                    <div class="reveal note-name" id="notename_d" style="display:none">
+                        <h1>D</h1>
+                    </div>
+                </div>
+                <div class="answer fc">
+                    <a class="button reveal_button" id="button2_d">Reveal Fingering Chart</a>
+                    <div class="reveal fingering" id="notechart_d" style="display:none">
+                        <img src="assets/d_chart.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="note" id="note5" style="display:none">
+            <div class="staff">
+                <div class="note-title">
+                    <h1>Name and play this note:</h1>
+                </div>
+                <img src="assets/e.png">
+            </div>
+            <div class="answers">
+                <div class="answer nn">
+                    <a class="button reveal_button" id="button1_E">Reveal Note Name</a>
+                    <div class="reveal note-name" id="notename_E" style="display:none">
+                        <h1>E</h1>
+                    </div>
+                </div>
+                <div class="answer fc">
+                    <a class="button reveal_button" id="button2_E">Reveal Fingering Chart</a>
+                    <div class="reveal fingering" id="notechart_E" style="display:none">
+                        <img src="assets/e_chart.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="note" id="note6" style="display:none">
+            <div class="staff">
+                <div class="note-title">
+                    <h1>Name and play this note:</h1>
+                </div>
+                <img src="assets/f.png">
+            </div>
+            <div class="answers">
+                <div class="answer nn">
+                    <a class="button reveal_button" id="button1_F">Reveal Note Name</a>
+                    <div class="reveal note-name" id="notename_F" style="display:none">
+                        <h1>F</h1>
+                    </div>
+                </div>
+                <div class="answer fc">
+                    <a class="button reveal_button" id="button2_F">Reveal Fingering Chart</a>
+                    <div class="reveal fingering" id="notechart_F" style="display:none">
+                        <img src="assets/f_chart.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="note" id="note7" style="display:none">
+            <div class="staff">
+                <div class="note-title">
+                    <h1>Name and play this note:</h1>
+                </div>
+                <img src="assets/high_g.png">
+            </div>
+            <div class="answers">
+                <div class="answer nn">
+                    <a class="button reveal_button" id="button1_hg">Reveal Note Name</a>
+                    <div class="reveal note-name" id="notename_hg" style="display:none">
+                        <h1>High G</h1>
+                    </div>
+                </div>
+                <div class="answer fc">
+                    <a class="button reveal_button" id="button2_hg">Reveal Fingering Chart</a>
+                    <div class="reveal fingering" id="notechart_hg" style="display:none">
+                        <img src="assets/highg_chart.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="note" id="note8" style="display:none">
+            <div class="staff">
+                <div class="note-title">
+                    <h1>Name and play this note:</h1>
+                </div>
+                <img src="assets/high_a.png">
+            </div>
+            <div class="answers">
+                <div class="answer nn">
+                    <a class="button reveal_button" id="button1_ha">Reveal Note Name</a>
+                    <div class="reveal note-name" id="notename_ha" style="display:none">
+                        <h1>High A</h1>
+                    </div>
+                </div>
+                <div class="answer fc">
+                    <a class="button reveal_button" id="button2_ha">Reveal Fingering Chart</a>
+                    <div class="reveal fingering" id="notechart_ha" style="display:none">
+                        <img src="assets/higha_chart.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

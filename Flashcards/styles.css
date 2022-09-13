@@ -1,0 +1,141 @@
+body {
+    margin: 0px;
+}
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    color: rgb(38, 103, 160);
+}
+p, .button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    color: rgb(17, 17, 17);
+}
+.header {
+    width: 100%;
+    border-bottom: 3px solid rgb(128, 128, 128);
+    text-align: center;
+    
+}
+.header .title {
+    width: 580px;
+    display: inline-block;
+    text-align: left;
+}
+.header h1 {
+    border-bottom: 1px solid rgb(128, 128, 128);
+}
+.header p {
+    margin-left: 35px;
+}
+.header h1, p {
+    margin: 10px 10px 10px 20px;
+    
+}
+.header .next-button-container {
+    display: inline-block;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.button {
+    background-color:aliceblue;
+    border: rgb(128, 128, 128);
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 7px;
+    padding: 15px;
+}
+.button:hover {
+    color: rgb(3, 3, 3);
+    background-color:rgb(136, 198, 253);
+    border: rgb(41, 41, 41);
+    border-style: solid;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.game-container {
+    margin-top: 20px;
+}
+.game-container .note {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.game-container .note .staff p {
+    width: 350px;
+    height: 350px;
+    background-color: rgb(128, 128, 128); 
+    margin: 50px;
+}
+.game-container .answers{
+    display: flex;
+    flex-direction: row;
+    margin: 20px 50px 10px 50px;
+}
+.answer {
+    width: 230px;
+    vertical-align: top;
+    text-align: center;
+}
+.answer .button, .answer .reveal {
+    display: inline-block;
+    text-align: center;
+}
+.fingering img {
+    max-width: 160px;
+}
+.answer .reveal {
+    margin-top: 30px;
+    width: 100%;
+}
+.note-title h1 {
+    font-size: 1.4em;
+}
+
+@media (max-width: 768px) {
+    .header .title {
+      width: 100%;
+    }
+    h1 {
+        font-size: 3em;
+    }
+    p {
+        font-size: 1em;
+    }
+    .button {
+        font-size: 1em;
+        border-width: 6px;
+        border-radius: 8px;
+    }
+
+    .header .next-button-container {
+        display: inline-block;
+        top: unset;
+        transform: unset;
+        margin-bottom: 10px;
+    }
+    .staff img {
+        max-width: 80%;
+    }
+  }
+
+  @media (max-width: 576px) {
+    h1 {
+        font-size: 2em;
+    }
+    p {
+        font-size: .8em;
+    }
+    .answers {
+        max-width: 100%;
+    }
+    .fingering img {
+        max-width: 100px;
+    }
+    .answer .button {
+        padding: 5px;
+    }
+  }
